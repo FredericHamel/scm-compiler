@@ -8,6 +8,10 @@
           ;(scheme char)
           ;(scheme file)
           (scheme r5rs))
+
+  ;; Speedup compilation
+  (cc-options "-U___SINGLE_HOST")
+
   (begin
 (define open-input-file* open-input-file)
 (define (pp-expression expr port) (write expr port) (newline port))
